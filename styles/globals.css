@@ -14,3 +14,31 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --primary-color: #42b883;
+  --primary-light-color: #4cd497;
+  --primary-background-color: rgba(66, 184, 131, .15);
+  --primary-dark-color: #143b2a;
+}
+
+.btn {
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 1px rgba(0,0,0,.15);
+}
+.btn:hover {
+  background-color: rgb(235, 235, 235);
+}
+.btn.active {
+  color: #fff;
+  background-color: var(--primary-color);
+}
+.btn-red { background-color: red; color: white; }
+.btn-blue { background-color: blue; color: white; }
+.btn-green { background-color: green; color: white; }
+.btn-brown { background-color: brown; color: white; }
+.btn-orange { background-color: orange; color: white; }
+.btn-yellow { background-color: yellow; color: var(--primary-color); }
+.btn-white { background-color: white; color: var(--primary-color); }
+.btn-primary { background-color: var(--primary-color); color: white; }
