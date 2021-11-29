@@ -49,7 +49,6 @@ export const busSlice = createSlice({
       .addCase(fetchStopOfRoute.fulfilled, (state, action) => {
         state.loading = 'loaded'
         state.routes = action.payload
-        console.log('fetchStopOfRoute loaded: ', action.payload)
       })
       .addCase(fetchStopOfRoute.rejected, (state, action) => {
         state.loading = 'failed'
@@ -65,8 +64,6 @@ export const busSlice = createSlice({
           return a
         }, {})
         state.estimatedTimeOfArrival = data
-        console.log('fetchEstimatedTimeOfArrival loaded: ', action.payload)
-        console.log('fetchEstimatedTimeOfArrival loaded: ', data)
       })
       .addCase(fetchEstimatedTimeOfArrival.rejected, (state, action) => {
         state.loading = 'failed'

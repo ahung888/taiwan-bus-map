@@ -39,13 +39,10 @@ export default function Routes() {
 
   let renderedStops = ''
   const currentRoute = routes?.[currentRouteIndex]
-  console.log('currentRoute: ', currentRoute)
-  console.log('estimatedTimeOfArrival xxx: ', estimatedTimeOfArrival)
   if (currentRoute !== undefined) {
     renderedStops = currentRoute.Stops.map((stop,i) => {
       const key = `${stop.StopUID}-${currentRoute.Direction}`
       const arrivalInfo = estimatedTimeOfArrival[key]
-      console.log('arrivalInfo: ', arrivalInfo)
       const time = arrivalInfo?.EstimateTime
       let formatedTime = '-'
       if (time) {
