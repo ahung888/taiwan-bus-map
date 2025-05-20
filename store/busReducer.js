@@ -6,8 +6,8 @@ const EntityLimit = 1000
 export const fetchStopOfRoute = createAsyncThunk(
   'bus/fetchStopOfRoute',
   async ({city, routeUID}, thunkAPI) => {
-    const url = `https://ptx.transportdata.tw/MOTC/v2/Bus/StopOfRoute/City/${city}?$filter=RouteUID%20eq%20'${routeUID}'&$top=${EntityLimit}&$format=JSON`
-    const response = await fetch(url, { headers: GetAuthorizationHeader() })
+    const url = `https://tdx.transportdata.tw/api/basic/v2/Bus/StopOfRoute/City/${city}?$filter=RouteUID%20eq%20'${routeUID}'&$top=${EntityLimit}&$format=JSON`
+    const response = await fetch(url, { headers: await GetAuthorizationHeader() })
     const data = await response.json()
     return data
   }
@@ -16,8 +16,8 @@ export const fetchStopOfRoute = createAsyncThunk(
 export const fetchEstimatedTimeOfArrival = createAsyncThunk(
   'bus/fetchEstimatedTimeOfArrival',
   async ({city, routeUID}, thunkAPI) => {
-    const url = `https://ptx.transportdata.tw/MOTC/v2/Bus/EstimatedTimeOfArrival/City/${city}?$filter=RouteUID%20eq%20'${routeUID}'&$top=${EntityLimit}&$format=JSON`
-    const response = await fetch(url, { headers: GetAuthorizationHeader() })
+    const url = `https://tdx.transportdata.tw/api/basic/v2/Bus/EstimatedTimeOfArrival/City/${city}?$filter=RouteUID%20eq%20'${routeUID}'&$top=${EntityLimit}&$format=JSON`
+    const response = await fetch(url, { headers: await GetAuthorizationHeader() })
     const data = await response.json()
     return data
   }
